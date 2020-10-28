@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <header>
+        <span class="icons">
+          <a href="https://candy-fluffs.tumblr.com/">
+            <i class="fab fa-tumblr"></i>
+          </a>
+          <a href="https://www.instagram.com/candy_fluffs/">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/candy_fluffs">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </span>
+        <span id="logoGroup"
+          ><a href="{% url 'home' %}"
+            ><img id="logo" src="{% static 'images/logo.png' %}" height="100px" />
+          </a>
+          <p id="tagline">{% block tagline %} {% endblock tagline %}</p></span
+        >
+        <span class="icons">
+          <i class="fas fa-search"></i>
+          <a href="{% url 'login' %}"><i class="fas fa-user"></i></a
+          ><i class="fas fa-shopping-bag"></i
+        ></span>
+    </header>
+    <nav>
+        <ul>
+            <!-- nav items go here -->
+            <li><a href="{% url 'products' %}">Products</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+</body>
+</html>

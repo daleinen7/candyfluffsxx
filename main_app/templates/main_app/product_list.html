@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- DROP DOWN -->
+<div class="fandomDropdown">
+  <button id="fandom">Fandom</button>
+  <div class="fandomList">
+    <a href="#">My Hero Academia</a>
+    <a href="#">Miraculous Ladybug</a>
+    <a href="#">JoJo's Bizarre Adventure</a>
+    <a href="#">Sailor Moon</a>
+    <a href="#">Haikyuu!</a>
+    <a href="#">Kingdom Hearts</a>
+    <a href="#">Vampire Hunter D</a>
+    <a href="#">Necahual</a>
+  </div>
+</div>
+<!-- PRODUCT GRID -->
+<div class="product_grid">
+  {% for product in product_list %}
+  <a href="{% url 'product_detail' product.id %}">
+    <div class="product">
+      <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_css_image_overlay_fade -->
+      <img
+        class="product_image"
+        src="{{ product.thumbnail.url }}"
+        alt="testing yo"
+      />
+      <div class="overlay text">
+        <h2>{{ product.title }}</h2>
+        <h3>${{product.price }}</h3>
+      </div>
+    </div>
+  </a>
+
+  {% endfor %}
+</div>
+{% endblock content %}
