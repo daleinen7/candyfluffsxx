@@ -1,5 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
+<!--  -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}" />
+{% endblock style %}
+
+{% block title %} {{ product.title }}{% endblock %}
+<!--  -->
+{% block tagline %}
+<p>{{ product.title }} (ㆁᴗㆁ✿)</p>
+{% endblock %}
+<!--  -->
 {% block content %}
-    <h1>{{ product.title }}</h1>
+<div class="product_detail">
     <img src="{{ product.thumbnail.url }}" alt="{{ product.title }} thumbnail">
+    <div class="info">
+        <h1>{{ product.title }}</h1>
+        <p class="price">${{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <button>Add to Cart</button>
+    </div>
+</div>
 {% endblock content %}

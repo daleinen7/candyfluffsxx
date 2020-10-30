@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    <p>This is not compelling to me anymore.</p>
+<!-- PRODUCT GRID -->
+<div class="product_grid">
+    {% for product in products %}
+    <a href="{% url 'product_detail' product.id %}">
+      <div class="product">
+        <img
+          class="product_image"
+          src="{{ product.thumbnail.url }}"
+          alt="{{ product.title }} thumbnail"
+        />
+        <div class="overlay text">
+          <h2>{{ product.title }}</h2>
+          <h3>${{ product.price }}</h3>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 {% endblock content %}

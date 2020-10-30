@@ -20,7 +20,11 @@ FANDOMS = (
 # ADD PRODUCT TYPES HERE * KEYS MUST BE UNIQUE *
 PRODUCT_TYPES = (
     ('M', 'Misc'),
-    ('B', 'Buttons')
+    ('B', 'Buttons'),
+    ('C', 'Charms'),
+    ('S', 'Stickers'),
+    ('P', 'Prints'),
+    ('N', 'Books')
 )
 
 # Create your models here.

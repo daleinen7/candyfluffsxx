@@ -7,7 +7,7 @@ from .forms import SignUpForm
 
 # Create your views here.
 def home(request):
-    context = {'title': 'Candy Fluffs! Homepage ATTACK!'}
+    context = {'title': 'Candy Fluffs!', 'products': Product.objects.all()}
     return render(request, 'home.html', context)
 
 class ProductsList(ListView):
