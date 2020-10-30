@@ -10,6 +10,16 @@ def home(request):
     context = {'title': 'Candy Fluffs!', 'products': Product.objects.all()}
     return render(request, 'home.html', context)
 
+def necahual(request):
+    value = 'Necahual'
+    product_list = Product.objects.filter(fandom='N')
+    context = {
+        'title': 'Candy Fluffs!', 
+        'products':product_list
+    }
+    print(context)
+    return render(request, 'necahual.html', context)
+
 class ProductsList(ListView):
     model = Product
     template = 'product_list.html'

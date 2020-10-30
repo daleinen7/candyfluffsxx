@@ -116,7 +116,7 @@ nav a:hover {
   background-color: #f7d67a;
   padding: 2px 12px;
   border: 2px solid #fcca4d;
-  border-radius: 4px;r
+  border-radius: 4px;
 }
 
 .product_detail button:hover {
@@ -136,7 +136,7 @@ nav a:hover {
 }
 
 /* DROP MENU */
-button {
+.dropbtn {
   font-size: 2em;
   background-color: transparent;
   color: #5c5c5c;
@@ -144,14 +144,14 @@ button {
   border: none;
   cursor: pointer;
 }
-.fandomDropdown {
+.fandom-dropdown {
   position: relative;
   display: inline-block;
 }
-.fandomDropdown:hover .fandomList {
+.fandom-dropdown:hover .dropdown-content{
   display: block;
 }
-.fandomList {
+.dropdown-content {
   display: none;
   position: absolute;
   background-color: #fff8f5;
@@ -159,13 +159,13 @@ button {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.fandomList a {
+.dropdown-content a {
   font-size: 1.5em;
   color: #5c5c5c;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-.fandomList a:hover {
+.dropdown-content a:hover {
   color: #f58f89;
 }

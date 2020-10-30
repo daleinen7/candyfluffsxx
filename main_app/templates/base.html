@@ -37,8 +37,7 @@
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'products' %}">Shop</a></li>
-            <li><a href="{% url 'products' %}">Necahuals</a></li>
-            <li><a href="{% url 'products' %}">Stickers</a></li>
+            <li><a href="{% url 'necahual' %}">Necahual</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
@@ -51,5 +50,8 @@
         {% block content %}
         {% endblock content %}
     </main>
+    <footer>
+      &copy; Candy Fluffs {% now "Y" %}
+    </footer>
 </body>
 </html>
